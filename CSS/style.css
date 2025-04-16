@@ -1,0 +1,65 @@
+/* Estiliza o título principal da página */
+.titulo {
+    text-align: center;        /* Centraliza o texto */
+    font-size: 2em;            /* Aumenta o tamanho da fonte */
+    color: #333;               /* Cor escura para boa leitura */
+    font-weight: bold;         /* Deixa o título mais forte */
+    margin-top: 20px;          /* Espaçamento superior */
+  }
+  
+  /* Estiliza o campo de entrada de texto */
+  .campo-tarefa {
+    width: 90%;                /* Largura responsiva */
+    max-width: 500px;          /* Limita a largura máxima */
+    display: block;            /* Para quebrar a linha */
+    margin: 20px auto;         /* Centraliza na página */
+    padding: 10px;             /* Espaço interno */
+    font-size: 1em;            /* Tamanho da fonte legível */
+    border: 1px solid #ccc;    /* Borda visível e suave */
+    border-radius: 5px;        /* Cantos arredondados */
+  }
+  
+  /* Estiliza o botão de adicionar tarefa */
+  .botao-adicionar {
+    background-color: #28a745; /* Verde para indicar ação */
+    color: white;              /* Texto branco para contraste */
+    padding: 10px 20px;        /* Área de clique maior */
+    border: none;              /* Remove a borda padrão */
+    border-radius: 5px;        /* Cantos arredondados */
+    cursor: pointer;           /* Cursor tipo “mão” */
+    display: block;            /* Quebra de linha */
+    margin: 0 auto 30px;       /* Centraliza e adiciona espaço inferior */
+    font-size: 1em;            /* Tamanho do texto adequado */
+  }
+  
+  /* Estiliza a lista de tarefas */
+  .lista-tarefas {
+    list-style-type: none;     /* Remove as bolinhas padrão */
+    padding: 0;                /* Remove o espaçamento interno */
+    max-width: 600px;          /* Limita a largura */
+    margin: 0 auto;            /* Centraliza na tela */
+  }
+  
+  /* Estiliza cada item da lista de tarefas */
+  .item-tarefa {
+    background-color: #f9f9f9; /* Fundo claro */
+    padding: 10px;             /* Espaço interno */
+    margin-bottom: 10px;       /* Espaçamento entre as tarefas */
+    border: 1px solid #ddd;    /* Borda suave */
+    border-radius: 5px;        /* Cantos arredondados */
+    display: flex;             /* Coloca o texto e botão em linha */
+    justify-content: space-between; /* Espaço entre texto e botão */
+    align-items: center;       /* Alinha verticalmente */
+  }
+  
+  /* Estiliza o botão de remoção de tarefas */
+  .botao-remover {
+    background-color: #dc3545; /* Vermelho para indicar exclusão */
+    color: white;              /* Contraste com o fundo */
+    border: none;              /* Sem borda */
+    padding: 5px 10px;         /* Tamanho confortável */
+    border-radius: 5px;        /* Cantos arredondados */
+    cursor: pointer;           /* Cursor de ação */
+    font-size: 0.9em;          /* Um pouco menor que o padrão */
+  }
+  
