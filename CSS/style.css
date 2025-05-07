@@ -1,82 +1,85 @@
-/* Arquivo: CSS/style.css */
-
-/* Estilo geral da página */
+/* Estilo geral do corpo */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f4f4f4;
   margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50px;
+  padding: 20px;
 }
-
-/* Título principal */
+/* Título */
 .titulo {
+  text-align: center;
+  font-size: 2em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   color: #333;
-  font-size: 2.5em;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-
-/* Campo de entrada da tarefa */
+ 
+/* Campo de tarefa */
 .campo-tarefa {
+  width: 60%;
   padding: 10px;
   font-size: 1em;
-  width: 250px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-right: 10px;
 }
-
-/* Botão de adicionar tarefa */
+ 
+/* Botão de adicionar */
 .botao-adicionar {
-  padding: 10px 30px;
-  font-size: 1em;
-  background-color: #4CAF50;
+  background-color: #009297;
   color: white;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 30px;
 }
-
+ 
 .botao-adicionar:hover {
-  background-color: #45a049;
+  background-color: #01595c;
 }
-
+ 
 /* Lista de tarefas */
 .lista-tarefas {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  width: 1000px;
-  margin-top: 100px;
+  margin-top: 20px;
 }
-
-/* Item individual da tarefa */
+ 
+/* Item da lista */
 .item-tarefa {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #d4d4d4;
   margin-bottom: 10px;
-  padding: 15px;
+  padding: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
 }
-
-/* Botão de remover tarefa */
+ 
+/* Botão de remover */
 .botao-remover {
-  background-color: #e74c3c;
+  background-color: #dc3545;
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
+  padding: 5px 10px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
-
+ 
 .botao-remover:hover {
-  background-color: #c0392b;
+  background-color: #a71d2a;
+}
+ 
+/* Botão de editar */
+.botao-editar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+ 
+.botao-editar:hover {
+  background-color: #0056b3;
 }
