@@ -1,0 +1,34 @@
+{
+  "name": "apilocalstorage",
+  "version": "1.0.0",
+  "description": "Projeto to Do list para adicionar pesquisar tarefas existentes, adicionar novas, edita-las e exclui-las ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoGarcia0606/apilocalstorage.git"
+  },
+  "keywords": [
+    "To",
+    "Do",
+    "List",
+    "CRUD",
+    "API",
+    "RESTful",
+    "node",
+    "web",
+    "Server"
+  ],
+  "author": "Gustavo Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoGarcia0606/apilocalstorage/issues"
+  },
+  "homepage": "https://github.com/GustavoGarcia0606/apilocalstorage#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
