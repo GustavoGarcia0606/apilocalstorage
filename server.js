@@ -36,22 +36,33 @@ app.delete('/tarefas/:id', (req, res) => {
     tarefas = tarefas.filter(tarefa => tarefa.id !== id);
     res.sendStatus(204);
 });
-// Rota PUT -atualiza uma tarefa da lista
+//Rota PUT - Atualiza uma tarefa existente
 app.put('/tarefas/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const {texto} = req.body;
-    const index = tarefas.findIndex(tarefa => tarefa.id === id);
-    if (index !== -1) {
-        tarefas[index] = novaTarefa;
-        res.json(tarefas[index]);
-    } else {
-        res.sendStatus(404).json({error: 'Tarefa nao encontrada'});
-    }
-    // atualiza o texto da tarefa encontrada
-    tarefas[index].texto = texto;
-    res.json(tarefas[index]);
-});
+  //Obtém o ID da tarefa a ser atualizada a partir dos parâmetros da URL
+  const id = parseInt(req.params.id);
+  //Extrai o novo texto enviado no corpo da requisição
+  const { texto } = req.body;
  
+  //Encontra o índice da tarefa a ser atualizada no array de tarefas
+  const index = tarefas.find(tarefa => tarefa.id == id);
+ 
+  //Validação: verifica se a tarefa existe
+  if (!index) {
+    //Se não existe, responde com erro 404 (Not Found)
+    return res.status(404).json({ error: 'Tarefa não encontrada' });
+  }
+ 
+    //Se um novo texto foi enviado, atualiza o campo 'texto' da tarefa
+    if (texto)  {
+       index.texto = texto; 
+    }
+    //Se não foi enviado, mantém o texto atual
+    else {
+       index.texto = index.texto;
+    }
+  //Responde com a tarefa atualizada
+  res.json(tarefas[index]); 
+});
 // inicia o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
