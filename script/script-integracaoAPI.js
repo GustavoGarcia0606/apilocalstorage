@@ -11,6 +11,38 @@ const botaoAdicionar = document.querySelector(".botao-adicionar");
 /*Seleciona a lista de tarefas e aloca na variavel listaTarefas,
 que sera utilizada para m exibir as tarefas na tela*/
 const listaTarefas = document.querySelector(".lista-tarefas");
+
+async function renderizarTarefas(){
+
+    try{
+        const reposta = await fetch(urlAPI)
+        const tarefas = await reposta.json();
+        
+        tarefas.forEach(tarefa => {
+            const itemLista = document.createElement('li');
+            itemLista.className ='item-tarefa';
+            itemLista.textContent = tarefa.Titulo;
+
+            const botaoRemover = document.createElement('button');
+            botaoRemover.className = 'botao-remover';
+            botaoRemover.textContent = 'excluir';
+
+            const botaoEditar = document.createElement('button');
+            botaoEditar.className ='botao-editar';
+            botaoEditar.textContent = 'Editar';
+
+            itemLista.appendChild(botaoRemover);
+            itemLista.appendChild(botaoEditar);
+            listaTarefas.appendChild(itemLista);
+
+
+        })
+    }
+    catch (erro){
+        console.error("Erro ao renderizar tarefas:" + erro);
+    }
+}
+
 /*Função para adicionar uma nova tarefa a lista de tarefas*/
 async function adicionarTarefas (titulo){
     try{
@@ -24,6 +56,10 @@ async function adicionarTarefas (titulo){
                 titulo: titulo
             })
         });
+
+        renderizarTarefas();
+
+
     }catch(erro){
         console.error("Erro ao adicionar tarefa:", erro);
     }
@@ -39,4 +75,4 @@ async function adicionarTarefas (titulo){
          inputTarefa.value = "";
      }
  });
- 
+ renderizarTarefas();
