@@ -1,28 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para o Font Awesome -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To Do List</title>
+  <link rel="stylesheet" href="../public/CSS/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
 </head>
 <body>
-    <h1 class="titulo"> Minha Lista de Tarefas</h1>
-    <form>
-    <input class = "campo-tarefa" type = "textdd" placeholder="Digite uma tarefa"> <!-- Campo de texto para digitar a tarefa -->
-    <button class ="botao-adicionar" type="submit">Adicionar</button> <!-- Botão para adicionar a tarefa -->
-    </form>
- 
-    <ul class="lista-tarefas"> <!-- Lista de tarefas -->
+  <h1 class="titulo">Minha Lista de Tarefas</h1>
 
+  <!-- Formulário para adicionar tarefa com todos os campos -->
+  <form id="form-adicionar">
+    <input
+      class="campo-titulo"
+      type="text"
+      placeholder="Título da tarefa"
+      required
+    />
+    <input
+      class="campo-descricao"
+      type="text"
+      placeholder="Descrição"
+    />
+    <select class="campo-status" required>
+      <option value="" disabled selected>Status</option>
+      <option value="pendente">Pendente</option>
+      <option value="em andamento">Em andamento</option>
+      <option value="concluido">Concluído</option>
+    </select>
+    <select class="campo-prioridade" required>
+      <option value="" disabled selected>Prioridade</option>
+      <option value="baixa">Baixa</option>
+      <option value="media">Média</option>
+      <option value="alta">Alta</option>
+    </select>
+    <input class="campo-data" type="date" required />
+    <button class="botao-adicionar" type="submit">Adicionar</button>
+  </form>
+  
+  <ul class="lista-tarefas"></ul>
 
+  <!-- Modal para edição -->
+  <div id="modal-edicao" class="modal">
+    <div class="modal-content">
+      <h2>Editar Tarefa</h2>
+      <form id="form-editar">
+        <input type="text" id="edit-titulo" placeholder="Título" required />
+        <input type="text" id="edit-descricao" placeholder="Descrição" />
+        <select id="edit-status" required>
+          <option value="" disabled>Status</option>
+          <option value="pendente">Pendente</option>
+          <option value="em andamento">Em andamento</option>
+          <option value="concluido">Concluído</option>
+        </select>
+        <select id="edit-prioridade" required>
+          <option value="" disabled>Prioridade</option>
+          <option value="baixa">Baixa</option>
+          <option value="media">Média</option>
+          <option value="alta">Alta</option>
+        </select>
+        <input type="date" id="edit-data" required />
+        <div class="modal-buttons">
+          <button type="submit">Salvar</button>
+          <button type="button" id="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-
-    </ul>
-
-    <script src="/script/script-integracaoAPI.js"></script> <!-- Link para o arquivo JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Link para o jQuery -->
- 
+  <script src="../script/script-integracaoAPI.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
